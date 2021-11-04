@@ -1,0 +1,409 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #304455;
+  font-family: "Source Sans Pro";
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* top区域  */
+.top {
+  display: flex;
+  width: 1519.2px;
+  height: 40px;
+  background-color: #42b983;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.top span {
+  color: #d6ffec;
+}
+
+.top a {
+  font-family: "Source Sans Pro";
+  color: #fff;
+  font-weight: bold;
+}
+
+/* header区域 */
+.header {
+  display: flex;
+  width: 1429.2px;
+  height: 41.6px;
+  padding: 10px 30px 10px 60px;
+  justify-content: space-between;
+}
+
+.header span {
+  font-size: 28.8px;
+  font-weight: 500;
+  font-family: "Dosis";
+  color: #273849;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.nav li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.6em;
+}
+
+.nav input {
+  border-radius: 15px;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 0 15px 0 30px;
+  border: 1px solid #e3e3e3;
+  color: #273849;
+  outline: none;
+  background: #fff url(./images/search.png) 8px 5px no-repeat;
+  background-size: 20px;
+}
+
+.nav a {
+  color: #304455;
+}
+
+.nav span {
+  margin-top: 3px;
+  margin-left: 6px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #4f5959;
+}
+
+/* hero区域 */
+.hero {
+  display: flex;
+  width: 1439.2px;
+  padding: 40px 40px 30px 40px;
+  justify-content: center;
+}
+
+.hero .left {
+  display: flex;
+  width: 491.4px;
+  height: 215px;
+  justify-content: flex-end;
+}
+
+.hero .left img {
+  width: 215px;
+  height: 215px;
+  margin-right: 60px;
+}
+
+.hero .right {
+  width: 768.6px;
+  height: 242.38px;
+}
+
+.hero .right h1 {
+  font-weight: 300;
+  font-size: 46px;
+}
+
+.hero .right .low {
+  display: flex;
+  height: 82.375px;
+  font-weight: 600;
+  justify-content: start;
+  align-items: center;
+}
+
+.hero .right .button {
+  padding: 0.75em 2em;
+  border-radius: 2em;
+  display: inline-block;
+  color: #fff;
+  background-color: #4fc08d;
+  box-sizing: border-box;
+  border: 1px solid #4fc08d;
+  margin-right: 8px;
+}
+
+.hero .right .green {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .right .white {
+  background-color: #fff;
+  color: #42b983;
+}
+
+.hero .right .grey {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  color: #4f5959;
+  border-color: #f6f6f6;
+}
+
+.hero .right .green svg {
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  width: 42px;
+  height: 42px;
+}
+
+.hero .right .grey svg {
+  position: absolute;
+  left: 6px;
+  top: 5px;
+  width: 32px;
+  height: 32px;
+}
+
+.hero .right .green span {
+  margin-left: 20px;
+}
+
+.hero .right .grey span {
+  margin-left: 20px;
+}
+
+.hero .right .green svg path {
+  width: 42px;
+  height: 42px;
+}
+
+.hero .right .grey svg path {
+  width: 32px;
+  height: 32px;
+}
+
+/* special区域 */
+.special {
+  width: 1519.2px;
+  height: 97.725px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.special h3 {
+  font-weight: 600;
+  color: #273849;
+}
+
+.special a img {
+  display: inline-block;
+  width: 160px;
+  margin-top: 15px;
+}
+
+/* highlights区域 */
+.highlights {
+  display: flex;
+  justify-content: center;
+  width: 1519.2px;
+  height: 166.4px;
+  margin-bottom: 70px;
+}
+
+.highlights .inner {
+  display: flex;
+  width: 900px;
+  height: 166.4px;
+}
+
+.highlights .inner .point {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 33%;
+  margin: 0 32px;
+}
+
+.highlights .inner .point h2 {
+  color: #42b983;
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+.highlights .inner .point p {
+  color: #4f5959;
+  word-spacing: 0.05em;
+  font-size: 1rem;
+}
+
+/* sponsors区域 */
+.sponsors {
+  display: flex;
+  justify-content: center;
+  width: 1439.2px;
+  height: 1570.78px;
+  padding: 35px 40px 45px;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+
+.sponsors .inner {
+  width: 715px;
+  height: 1570.78px;
+}
+
+.sponsors .inner h3 {
+  color: #999;
+  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sponsors .inner .box {
+  width: 715px;
+  height: 1570.78px;
+  overflow: hidden;
+}
+
+.sponsors .inner .box a {
+  display: inline-block;
+  margin: 20px 15px 0;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.sponsors .inner .box .button {
+  font-size: 0.9em;
+  font-weight: 700;
+  color: #42b983;
+  padding: 0.75em 2em;
+  border-radius: 2em;
+  border: 1px solid #4fc08d;
+}
+
+.open-collective-sponsors {
+  margin-top: 60px;
+}
+
+.open-collective-sponsors h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.open-collective-sponsors h4 {
+  color: #999;
+  font-size: 14px;
+  margin-top: 21px;
+}
+
+.open-collective-sponsors a img {
+  width: auto;
+  max-width: 100px;
+  max-height: 60px;
+}
+
+/* news区域 */
+.news {
+  display: flex;
+  justify-content: center;
+  width: 1479.2px;
+  height: 156.625px;
+  padding: 40px 20px 70px;
+}
+
+.news .inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 500px;
+  height: 122px;
+}
+
+.news .inner h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #273849;
+  margin: 18.72px 0px;
+}
+
+.news .inner .newsletter-input {
+  width: 500px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.news .inner form {
+  position: relative;
+}
+
+.news .inner .button {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 2em;
+  color: #fff;
+  background-color: #4fc08d;
+  box-sizing: border-box;
+  border: 1px solid #4fc08d;
+  font-size: 1.05em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  min-width: 8em;
+}
+
+.news .inner p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #304455;
+}
+.news .inner a {
+  color: #42b983;
+}
+
+/* footer区域 */
+.footer {
+  width: 1519.2px;
+  height: 110px;
+  background-color: #475050;
+  padding: 40px 0px;
+  text-align: center;
+}
+
+.footer p {
+  color: #fff;
+  margin: 16px 0px;
+  word-spacing: 0.05em;
+}
+
+.footer a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.footer svg {
+  width: 18px;
+  height: 18px;
+  padding: 0 5px;
+}
