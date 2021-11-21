@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    li {
+      list-style: none;
+    }
+
+    .tic-tac-toe {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      justify-items: stretch;
+      align-items: stretch;
+      grid-row-gap: 1px;
+      grid-column-gap: 1px;
+      width: 150px;
+      height: 150px;
+      border: 1px solid #333;
+      background-color: #333;
+    }
+
+    .tic-tac-toe li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      font-size: 36px;
+      cursor: pointer;
+    }
+
+    .box {
+      display: flex;
+      align-items: center;
+    }
+
+    .box-right {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .lishi {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lishi li {
+      list-style: decimal;
+    }
+
+    .start {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tic-tac-toe">
+    <li id="0" class="btn"></li>
+    <li id="1" class="btn"></li>
+    <li id="2" class="btn"></li>
+    <li id="3" class="btn"></li>
+    <li id="4" class="btn"></li>
+    <li id="5" class="btn"></li>
+    <li id="6" class="btn"></li>
+    <li id="7" class="btn"></li>
+    <li id="8" class="btn"></li>
+  </div>
+  <div class="box">
+    <span class="box-left">NextPaly:</span>
+    <p class="box-right">x</p>
+  </div>
+  <div class="start">go to game start</div>
+  <ul class="lishi"> </ul>
+  <script>
+    let cells = document.querySelectorAll('.btn')
+    let palyer = 'x'
+    let nextPaly = 'x'
+    let hasWinner = false
+    let num = 0
+    let histories = []
+    const main = async () => {
+      // 开始游戏清空棋盘
+      let start = document.querySelector('.start');
+      start.onclick = () => {
+        for (let i = 0; i < cells.length; i++) {
+          cells[i].innerText = ''
+        }
+      }
+      for (let i = 0; i < cells.length; i++) {
+        cells[i].onclick = async () => {
+          if (!cells[i].innerText && !hasWinner) {
+            cells[i].innerText = palyer
+            cells[i].style.pointerEvents = 'none'
+            // 追加历史记录
+            num++
+            let li = document.createElement('li');
+            let lishi = document.querySelector('.lishi');
+            li.innerText = 'Go to move #' + num
+            lishi.appendChild(li)
+            li.style.cursor = 'pointer'
+            li.id = num
+            // 获取历史记录
+            let data = {}
+            data.id = cells[i].id
+            data.content = cells[i].innerText
+            histories.push(data)
+            // 获取下一步玩家该出x/o
+            let p = document.querySelector('.box-right')
+            nextPaly = nextPaly === 'o' ? 'x' : 'o'
+            p.innerText = nextPaly
+            // 判断赢家
+            await winner(palyer)
+            // 切换玩家
+            palyer = palyer === 'x' ? 'o' : 'x'
+            jilu()
+          }
+          else {
+            return
+          }
+        }
+      }
+    }
+    // 判断有无玩家胜出
+    const winner = (curPlay) => {
+      const winConditions = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+      ]
+      let winnerCurPlayer = []
+      for (let i = 0; i < cells.length; i++) {
+        if (cells[i].innerText === curPlay) {
+          winnerCurPlayer.push(cells[i].getAttribute('id'))
+        }
+      }
+      if (winnerCurPlayer.length >= 3) {
+        let x = winConditions.some((item) =>
+          item.map(String).every((val) => winnerCurPlayer.includes(val))
+        )
+        if (x) {
+          let span = document.querySelector('.box-left')
+          let p = document.querySelector('.box-right')
+          span.innerText = 'Winner:'
+          p.innerText = `${curPlay}`
+          hasWinner = true
+        }
+      }
+    }
+    main()
+
+    // 追加历史记录
+    const jilu = () => {
+      let lis = document.querySelectorAll('.lishi li')
+      for (let i = 0; i < lis.length; i++) {
+        lis[i].onclick = () => {
+          // 点击之后清空棋盘
+          for (let i = 0; i < cells.length; i++) {
+            cells[i].innerText = ''
+          }
+          let curHistories = histories.slice(0, lis[i].id)
+          for (let j = 0; j < curHistories.length; j++) {
+            for (let i = 0; i < cells.length; i++) {
+              if (curHistories[j].id === cells[i].id && !cells[i].innerText) {
+                cells[i].innerText = curHistories[j].content
+              }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
